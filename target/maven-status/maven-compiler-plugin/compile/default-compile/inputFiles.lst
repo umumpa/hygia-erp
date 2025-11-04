@@ -1,2 +1,12 @@
 /Users/umumpa/Desktop/hygia-erp/backend/src/main/java/com/hygia/erp/QuickbooksErpApplication.java
+/Users/umumpa/Desktop/hygia-erp/backend/src/main/java/com/hygia/erp/controller/BatchController.java
 /Users/umumpa/Desktop/hygia-erp/backend/src/main/java/com/hygia/erp/controller/HealthController.java
+/Users/umumpa/Desktop/hygia-erp/backend/src/main/java/com/hygia/erp/controller/ItemController.java
+/Users/umumpa/Desktop/hygia-erp/backend/src/main/java/com/hygia/erp/domain/Item.java
+/Users/umumpa/Desktop/hygia-erp/backend/src/main/java/com/hygia/erp/domain/ItemBatch.java
+/Users/umumpa/Desktop/hygia-erp/backend/src/main/java/com/hygia/erp/dto/ItemDtos.java
+/Users/umumpa/Desktop/hygia-erp/backend/src/main/java/com/hygia/erp/dto/PageResponse.java
+/Users/umumpa/Desktop/hygia-erp/backend/src/main/java/com/hygia/erp/exception/GlobalExceptionHandler.java
+/Users/umumpa/Desktop/hygia-erp/backend/src/main/java/com/hygia/erp/repository/ItemBatchRepository.java
+/Users/umumpa/Desktop/hygia-erp/backend/src/main/java/com/hygia/erp/repository/ItemRepository.java
+/Users/umumpa/Desktop/hygia-erp/backend/src/main/java/com/hygia/erp/service/BatchService.java
