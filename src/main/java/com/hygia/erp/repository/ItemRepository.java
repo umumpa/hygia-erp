@@ -29,4 +29,5 @@ public interface ItemRepository extends JpaRepository<Item, Long> {
     Optional<Item> findBySku(String sku);
     Optional<Item> findByQbItemId(String qbItemId);
     Optional<Item> findByNameIgnoreCase(String name);
+
 }

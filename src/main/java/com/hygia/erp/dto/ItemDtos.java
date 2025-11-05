@@ -1,6 +1,7 @@
 package com.hygia.erp.dto;
 
 import java.time.LocalDate;
+import jakarta.validation.constraints.*;
 
 public class ItemDtos {
 
@@ -14,21 +15,40 @@ public class ItemDtos {
             String qbItemId
     ) {}
 
-    public record BatchReceiveRequest(     
-            Long itemId,         
-            String qbItemId,     
-            String sku,          
-            String barcode,      
-            String name,         
-            String unit,         
+    public record BatchReceiveRequest(
+        Long itemId,
 
-            // batch information
-            LocalDate expirationDate, 
-            Integer quantity,         
-            String location,          
-            String batchCode,         
-            String note               
-    ) {}
+        @Size(max = 128)
+        String qbItemId,
+
+        @Size(max = 128)
+        String sku,
+
+        @Size(max = 128)
+        String barcode,
+
+        @Size(min = 1, max = 200)
+        String name,
+
+        @Size(max = 32)
+        String unit,
+
+        @NotNull
+        LocalDate expirationDate,
+
+        @NotNull
+        @Positive
+        Integer quantity,
+
+        @Size(max = 100)
+        String location,
+
+        @Size(max = 100)
+        String batchCode,
+
+        @Size(max = 500)
+        String note
+) {}
 
  
     public record BatchResponse(

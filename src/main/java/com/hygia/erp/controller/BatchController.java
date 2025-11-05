@@ -6,10 +6,13 @@ import com.hygia.erp.dto.PageResponse;
 import com.hygia.erp.service.BatchService;
 import org.springframework.web.bind.annotation.*;
 
+import jakarta.validation.Valid;
+import org.springframework.validation.annotation.Validated;
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/batches")
+@Validated
 public class BatchController {
 
     private final BatchService batchService;
@@ -20,7 +23,7 @@ public class BatchController {
 
     // 入库（同 item+expiration+batchCode 合并数量）
     @PostMapping("/receive")
-    public BatchResponse receive(@RequestBody BatchReceiveRequest req) {
+    public BatchResponse receive(@Valid @RequestBody BatchReceiveRequest req) {
         return batchService.receive(req);
     }
 

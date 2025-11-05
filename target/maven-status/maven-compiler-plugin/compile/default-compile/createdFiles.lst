@@ -4,7 +4,10 @@ com/hygia/erp/dto/ItemDtos$BatchReceiveRequest.class
 com/hygia/erp/exception/GlobalExceptionHandler.class
 com/hygia/erp/dto/ItemDtos$ItemResponse.class
 com/hygia/erp/controller/HealthController.class
+com/hygia/erp/repository/ItemRepository.class
 com/hygia/erp/dto/ItemDtos$BatchResponse.class
 com/hygia/erp/dto/ItemDtos.class
 com/hygia/erp/QuickbooksErpApplication.class
+com/hygia/erp/controller/BatchController.class
 com/hygia/erp/dto/PageResponse.class
+com/hygia/erp/controller/ItemController.class
