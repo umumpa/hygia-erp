@@ -1,5 +1,6 @@
 package com.hygia.erp.service;
 
+
 import com.hygia.erp.domain.Item;
 import com.hygia.erp.domain.ItemBatch;
 import com.hygia.erp.dto.ItemDtos.BatchReceiveRequest;
@@ -11,6 +12,12 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.Optional;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
+
+import com.hygia.erp.dto.PageResponse;
 
 @Service
 public class BatchService {
@@ -132,5 +139,33 @@ public class BatchService {
                         b.getLocation()
                 ))
                 .toList();
+    }
+    
+    public PageResponse<BatchResponse> listBatchesOfItem(Long itemId, int page, int size) {
+        if (itemId == null) {
+            throw new IllegalArgumentException("itemId 为必填");
+        }
+        if (page < 0) page = 0;
+        if (size <= 0) size = 20;
+
+        Pageable pageable = PageRequest.of(
+            page,
+            size,
+            Sort.by(Sort.Direction.ASC, "expirationDate").and(Sort.by("id"))
+        );
+
+        Page<ItemBatch> p = batchRepo.findPageByItemIdWithItem(itemId, pageable);
+
+        return PageResponse.of(
+            p.map(b -> new BatchResponse(
+                b.getId(),
+                b.getItem().getId(),
+                b.getItem().getName(),
+                b.getBatchCode(),
+                b.getExpirationDate(),
+                b.getQuantity(),
+                b.getLocation()
+            ))
+        );
     }
 }
